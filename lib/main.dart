@@ -1,7 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(XylophoneApp());
+void main() => runApp(const XylophoneApp());
 
 void playSound(int noteName) {
   AudioCache.instance = AudioCache(prefix: '');
@@ -12,8 +12,7 @@ void playSound(int noteName) {
 Expanded buildKeys({int notenr = 1, Color colorName1 = Colors.red}) {
   return Expanded(
     child: TextButton(
-      style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all<Color>(colorName1)),
+      style: ElevatedButton.styleFrom(backgroundColor: colorName1),
       onPressed: () {
         playSound(notenr);
       },
